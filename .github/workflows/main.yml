@@ -28,5 +28,5 @@ jobs:
       - name: logout
         run: |
           az logout
-          if: always()
+        if: always()
       
