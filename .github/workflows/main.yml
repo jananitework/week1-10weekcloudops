@@ -1,0 +1,32 @@
+name: azure-static-website
+run-name: Build
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  push-site-toazure:
+    runs-on: ubuntu-latest #this is the runner name (the vm that runs the workflow)
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS}}' #The secret we created for you it might be just AZURE_CREDENTIALS 
+
+      - name: Deploy to Azure Static Website #In the below, $web is the container where we are uploading our files to.
+        run: |
+          az storage blob upload-batch --overwrite --account-name AZURE_CREDENTIALS --connection-string '${{ secrets.AZURE_STORAGE_CONNECTIONSTRING}}' --destination '$web' -s . --pattern "*.html"
+      - name: Purge CDN to clear all the cache # Since we are using CDN, we will be puring the CDN to clear all the caches of our website
+        run: | 
+          az cdn endpoint purge --resource-group '${{ secrets.AZURE_CDN_RESOURCEGROUP}}' --name '${{secrets.AZURE_CDN_NAME}}' --profile-name '${{ secrets.AZURE_CDN_PROFILENAME}}' --content-paths '/*'
+          sleep 60
+          
+      - name: logout
+        run: |
+          az logout
+          if: always()
+      
