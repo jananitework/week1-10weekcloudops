@@ -4,7 +4,7 @@
 
 :small_orange_diamond: Host a static website on AWS or Azure or GCP and implement CICD 
 
-:small_orange_diamond: Services used : Azure storage, Azure CDN, DNS
+:small_orange_diamond: Services used : Azure storage, Azure CDN, DNS.
 
 ## 💡 1. Host a static website 
 
