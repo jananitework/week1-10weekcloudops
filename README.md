@@ -8,7 +8,7 @@
 
 ## Architecture 
 
-![image](https://github.com/jananitework/week1-10weekcloudops/assets/136428700/a81329c1-2994-42dc-9efd-c23c6921f816)
+![image](https://github.com/jananitework/week1-10weekcloudops/assets/136428700/dc4053f7-981f-4345-9148-5b891b174774)
 
 
 ## 💡 1. Host a static website 
