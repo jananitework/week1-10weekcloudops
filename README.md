@@ -4,7 +4,7 @@
 
 :small_orange_diamond: Host a static website on AWS or Azure or GCP and implement CICD 
 
-:small_orange_diamond: Services used : Azure storage, Azure CDN, DNS.
+:small_orange_diamond: Services used : Azure storage, Azure CDN, GitHub Actions.
 
 ## Architecture 
 
@@ -30,7 +30,7 @@
 
 ```
 3.1. DNS Registrar : Create your own domain by registering with some DNS registrar. Map your desired subdomain with the CDN Endpoint hostname obtained in previos step.
-3.2. Custom Domain in Azure : Associate a custom domain for your CDN endpoint to your own subdomain.
+3.2. Custom Domain in Azure : Associate a custom domain for your CDN endpoint. 
 3.3. SSL/TLS : To validate your domain, you can either add own certicates and upload it in Azure Key Vault or use can leverage Azures CDN managed certificates.
 ```
 
