@@ -51,7 +51,7 @@
 - AZURE_STORAGE_CONNECTIONSTRING :	Connection string of the storage account
 
 ```
-Sample change to check workflow
+Sample change to check workflow2
 
 #### References :
 - https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal
